@@ -16,7 +16,7 @@ class Game {
     this.#randomСell();
     setInterval(() => {
       this.#randomСell();
-    }, 2000);
+    }, 1000);
   }
   #randomСell() {
     let num = 0;
