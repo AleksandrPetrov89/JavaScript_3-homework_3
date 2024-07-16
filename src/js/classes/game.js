@@ -13,11 +13,8 @@ export default class Game {
     this.btStart.addEventListener("click", this.start);
   }
 
-  async start() {
+  start() {
     this.btStart.setAttribute("disabled", true);
-    let result = await this.playingField.goblinFlicker();
-    if (result) {
-      this.btStart.removeAttribute("disabled");
-    }
+    this.playingField.goblinFlicker(this.btStart);
   }
 }

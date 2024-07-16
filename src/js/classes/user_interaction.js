@@ -41,12 +41,14 @@ export default class UserInteraction {
   }
 
   checkingPoints() {
+    const text = `\nПопадений: ${this.hits}\nПромахов/пропусков: ${this.misses}`;
     if (this.hits === 5 || this.misses === 5) {
       if (this.hits === 5) {
-        alert("Вы победили!");
+        alert(`Вы победили!` + text);
       } else {
-        alert("Вы проиграли!");
+        alert(`Вы проиграли!` + text);
       }
+      this.miss();
       this.#resetPoints();
       return true;
     }

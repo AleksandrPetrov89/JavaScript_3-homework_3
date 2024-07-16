@@ -30,25 +30,22 @@ export default class PlayingField {
     }
   }
 
-  async goblinFlicker() {
+  goblinFlicker(btStart) {
     this.#randomСell();
     if (this.userInteraction == undefined) {
       this.userInteraction = new UserInteraction(this.parentElement);
     }
     this.userInteraction.waitingClick();
-    let gameOver = new Promise((resolve) => {
-      this.intervalFn = this.intervalFn.bind(this, resolve);
-      this.interval = setInterval(this.intervalFn, 2000);
-    });
-    return await gameOver;
+    this.intervalFn = this.intervalFn.bind(this, btStart);
+    this.interval = setInterval(this.intervalFn, 2000);
   }
 
-  intervalFn(resolve) {
+  intervalFn(btStart) {
     this.userInteraction.late();
     if (this.userInteraction.checkingPoints()) {
       clearInterval(this.interval);
       this.userInteraction.removeClick();
-      resolve(true);
+      btStart.removeAttribute("disabled");
     } else {
       this.#randomСell();
     }
