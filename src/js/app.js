@@ -3,7 +3,7 @@
 import Game from "./classes/game";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const field = document.querySelector(".field");
-  const game = new Game(field);
-  game.start();
+  const body = document.getElementsByTagName("body")[0];
+  const game = new Game(body);
+  game.waitingStart();
 });
