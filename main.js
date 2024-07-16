@@ -108,7 +108,7 @@ class PlayingField {
     }
     this.userInteraction.waitingClick();
     this.intervalFn = this.intervalFn.bind(this, btStart);
-    this.interval = setInterval(this.intervalFn, 2000);
+    this.interval = setInterval(this.intervalFn, 1000);
   }
   intervalFn(btStart) {
     this.userInteraction.late();
