@@ -13,6 +13,11 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
+  cursor: url(../img/hammer_1_w.png), auto;
+}
+
+.field:active {
+  cursor: url(../img/hammer_1_b.png), auto;
 }
 
 .menu {
